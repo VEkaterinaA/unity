@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
@@ -12,12 +13,12 @@ public class CreateWeapon
         _diContainer = diContainer;
     }
 
-    public void Create(WeaponMarker marker)
+    public async Task Create(WeaponStartPos marker)
     {
-        var weaponFactory = _diContainer.Resolve<IFactory<WeaponMarker>>();
+        var weaponFactory = _diContainer.Resolve<IFactory<WeaponStartPos>>();
 
-        weaponFactory.Load();
-        weaponFactory.Create(marker,marker.weaponStartPosition.position);
+       await weaponFactory.Load();
+       await weaponFactory.Create(marker,marker.weaponStartPosition.position);
     }
 }
 

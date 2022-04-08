@@ -6,47 +6,54 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     //Classes
-    public MovePlayer motor;
-    private CameraPosition cameraPosition;
-    private CreateWeapon createWeapon;
+    private MovePlayer _movePlayer;
+    private CameraPosition _cameraPosition;
+    private CreateWeapon _createWeapon;
+    private MinimapCameraController _miniMapCameraController;
     //**********
-    public ClassCameraViewEnum.CameraViewTypes cameraView;//enum
+    private ClassCameraViewEnum.CameraViewTypes cameraView;//enum
     //CameraView
-    [Header("CameraView")]
+    [Header("Camera View")]
     [SerializeField]
     private Camera FirstCameraPlayer;
     [SerializeField]
     private Camera SecondCameraPlayer;
     [SerializeField]
     private Camera ThirdCameraPlayer;
-    //**********
-    private Rigidbody rigidbodyPlayer;
     //
-    public WeaponMarker weaponMarker;
+    [Header("Start Position Bullet")]
+    public WeaponStartPos weaponMarker;
     //
-    [SerializeField]
-    private Image Aim;
+    [HideInInspector]
+    public Image Aim;
+    //
+    private Rigidbody rigidmodyPlayer;
 
     [Inject]
-    public void Construct(MovePlayer movePlayer, CameraPosition cameraPosition, CreateWeapon weapon)
+    public void Construct(MovePlayer movePlayer, CameraPosition cameraPosition, CreateWeapon createWeapon, MinimapCameraController miniMapCameraController)
     {
-        motor = movePlayer;
-        this.cameraPosition = cameraPosition;
-        createWeapon = weapon;
+        _movePlayer = movePlayer;
+        _cameraPosition = cameraPosition;
+        _createWeapon = createWeapon;
+        _miniMapCameraController = miniMapCameraController;
     }
-    private void Start()
+
+    private void Awake()
     {
-        rigidbodyPlayer = gameObject.GetComponent<Rigidbody>();
+        rigidmodyPlayer = GetComponent<Rigidbody>();
         cameraView = ClassCameraViewEnum.CameraViewTypes.Third;
+        _miniMapCameraController.StartMiniMapCameraPosition(transform);
     }
-    private void FixedUpdate()
+
+    private async void FixedUpdate()
     {
         float xMov = Input.GetAxis("Horizontal");
         float zMov = Input.GetAxis("Vertical");
         //movement player
         if (xMov != 0 || zMov != 0)
         {
-            motor.PlayerMovement(xMov,zMov,rigidbodyPlayer, transform.forward);
+            _miniMapCameraController.ChangeMiniMapCameraPosition(transform);
+            _movePlayer.PlayerMovement(xMov,zMov, transform.forward, rigidmodyPlayer);
         }
         //change camera view
         if (Input.GetKeyDown(KeyCode.C))
@@ -61,13 +68,14 @@ public class PlayerController : MonoBehaviour
         //shoot
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            createWeapon.Create(weaponMarker);
+            await _createWeapon.Create(weaponMarker);
 
         }
     }
-    internal void ChangeCameraView()
+
+    public void ChangeCameraView()
     {
-      cameraPosition.ChangeCameraPosition(
+      _cameraPosition.ChangeCameraPosition(
           cameraView = cameraView.Next(),
           FirstCameraPlayer,
           SecondCameraPlayer,

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 using Zenject;
@@ -11,7 +12,7 @@ public class EnemyAI : MonoBehaviour
    // private float changePosTime = 5f;
    // private float moveDistance = 40f;
     [SerializeField]
-    private WeaponMarker weaponMarker;
+    private WeaponStartPos weaponMarker;
     [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;
 
@@ -42,14 +43,14 @@ public class EnemyAI : MonoBehaviour
         walkPoint = transform.position;
     }
 
-    private void Update()
+    private async void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position,sightRange,whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange,whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         else if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        else if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        else if (playerInAttackRange && playerInSightRange) await AttackPlayer();
 
     }
 
@@ -74,7 +75,7 @@ public class EnemyAI : MonoBehaviour
     {
         navMeshAgent.SetDestination(playerController.transform.position);
     }
-    void AttackPlayer()
+    async Task AttackPlayer()
     {
         //navMeshAgent.SetDestination(playerController.transform.position);
         transform.LookAt(playerController.transform);
@@ -83,7 +84,7 @@ public class EnemyAI : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
-            createWeapon.Create(weaponMarker);
+            await createWeapon.Create(weaponMarker);
         }
     }
 

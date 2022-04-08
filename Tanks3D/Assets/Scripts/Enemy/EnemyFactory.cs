@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 using Zenject;
 
-public class EnemyFactory : IFactory<EnemyMarker>
+public class EnemyFactory : IFactory<EnemyStartPos>
 {
     public string PrefabName => "Enemy";
     public Object PrefabObject { get; set; }
@@ -12,11 +13,11 @@ public class EnemyFactory : IFactory<EnemyMarker>
     {
         _diContainer = diContainer;
     }
-    public void Load()
+    public async Task Load()
     {
         PrefabObject = Resources.Load(PrefabName);
     }
-    public void Create(EnemyMarker enemyMarker, Vector3 StartPos)
+    public async Task Create(EnemyStartPos enemyMarker, Vector3 StartPos)
     {
                 _diContainer.InstantiatePrefab(PrefabObject, StartPos, Quaternion.identity, null);
     }

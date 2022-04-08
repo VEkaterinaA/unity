@@ -1,5 +1,6 @@
-﻿using Assets.Scripts;
+﻿using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 class MainInstaller : MonoInstaller, IInitializable
@@ -11,19 +12,23 @@ class MainInstaller : MonoInstaller, IInitializable
     [SerializeField]
     private Transform scene;
     [SerializeField]
-    private EnemyMarker[] EnemyMarkers;
-
+    private EnemyStartPos[] EnemyMarkers;
+    [SerializeField]
+    private Image imageHealth, imageAim;
+    [SerializeField]
+    private Camera MiniMapCamera;
     public override void InstallBindings()
     {
         BindInstallerBindings();
-        
+
         BindEnemyFactory();
 
         BindWeaponFactory();
 
+        BindMinimapCameraController();
+
         BindPlayer();
 
-        BindGameController();
 
     }
 
@@ -37,16 +42,17 @@ class MainInstaller : MonoInstaller, IInitializable
     private void BindPlayer()
     {
         Container
-        .Bind<MovePlayer>()
-        .AsSingle();
+            .Bind<HealthBar>()
+            .AsSingle()
+            .WithArguments(imageHealth);
+
+        Container
+            .Bind<MovePlayer>()
+            .AsSingle();
 
         Container
             .Bind<CameraPosition>()
             .AsSingle();
-        
-        Container
-           .Bind<HealthBar>()
-           .AsSingle();
 
         PlayerController playerController = Container
             .InstantiatePrefabForComponent<PlayerController>(
@@ -56,26 +62,31 @@ class MainInstaller : MonoInstaller, IInitializable
         .Bind<PlayerController>()
             .FromInstance(playerController)
             .AsSingle();
+
+        playerController.Aim = imageAim;
     }
 
-    private void BindGameController()
+    private void BindMinimapCameraController()
     {
         Container
-            .Bind<GameController>()
-            .AsSingle();
+            .Bind<MinimapCameraController>()
+            .AsSingle()
+            .WithArguments(MiniMapCamera);
     }
 
     private void BindEnemyFactory()
     {
         Container
-            .Bind<IFactory<EnemyMarker>>()
+            .Bind<IFactory<EnemyStartPos>>()
             .To<EnemyFactory>()
             .AsSingle();
     }
     private void BindWeaponFactory()
     {
+        BindCharacterWeapon();
+
         Container
-            .Bind<IFactory<WeaponMarker>>()
+            .Bind<IFactory<WeaponStartPos>>()
             .To<WeaponFactory>()
             .AsSingle();
 
@@ -83,17 +94,28 @@ class MainInstaller : MonoInstaller, IInitializable
             .Bind<CreateWeapon>()
             .AsSingle();
     }
-
-    public void Initialize()
+    private void BindCharacterWeapon()
     {
-        var enemyFactory = Container.Resolve<IFactory<EnemyMarker>>();
-
-        enemyFactory.Load();
-        foreach (var marker in EnemyMarkers)
-        {
-            enemyFactory.Create(marker, marker.transform.position);
-        }
+        Container
+            .Bind<Damage>()
+            .AsTransient();
     }
 
+    public async void Initialize()
+    {
+       await LoadEnemy();
+    }
+
+    public async Task LoadEnemy()
+    {
+        var enemyFactory = Container.Resolve<IFactory<EnemyStartPos>>();
+
+        await enemyFactory.Load();
+        foreach (var marker in EnemyMarkers)
+        {
+            await enemyFactory.Create(marker, marker.transform.position);
+        }
+
+    }
 
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 public class Health : MonoBehaviour
@@ -36,6 +37,15 @@ public class Health : MonoBehaviour
     {
         float x = (HealthPerson * 100) / StartHealthPlayer;
         float fill = x / 100;
-        healthBar.ChangeFill(fill);
+        if (fill > 0)
+        {
+            healthBar.ChangeFill(fill);
+        }
+        else
+        {
+            healthBar.ChangeFill(0);
+            Debug.Log("Reloading scene");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

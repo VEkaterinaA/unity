@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 using Zenject;
 
-class WeaponFactory : IFactory<WeaponMarker>
+class WeaponFactory : IFactory<WeaponStartPos>
 {
     public string PrefabName => "AP";
     public Object PrefabObject { get; set; }
@@ -12,24 +13,26 @@ class WeaponFactory : IFactory<WeaponMarker>
         _diContainer = diContainer;
     }
 
-    public void Create(WeaponMarker weaponMarker, Vector3 StartPos)
+    public async Task Create(WeaponStartPos weaponMarker, Vector3 StartPos)
     {
-        var NewWeapon = _diContainer.InstantiatePrefab(PrefabObject, weaponMarker.transform);
+        var NewWeaponObject = _diContainer.InstantiatePrefab(PrefabObject, weaponMarker.transform);
 
-        NewWeapon.transform.localPosition = Vector3.zero;
-        NewWeapon.transform.localRotation = Quaternion.identity;
+        var NewWeaponMoveScript = NewWeaponObject.GetComponent<MoveWeapon>();
+        
 
-        Damage damage = NewWeapon.transform.GetComponent<Damage>();
+        NewWeaponMoveScript.transform.localPosition = Vector3.zero;
+        NewWeaponMoveScript.transform.localRotation = Quaternion.identity;
+
         switch (weaponMarker.weaponType)
         {
             case WeaponType.TankRound:
-                damage.DamageBullet = 10;
+                NewWeaponMoveScript._damage.DamageBullet = 10;
                 break;
         }
 
     }
 
-    public void Load()
+    public async Task Load()
     {
         PrefabObject = Resources.Load(PrefabName);
     }

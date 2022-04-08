@@ -462,9 +462,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8763275137484995654}
-  - component: {fileID: 8763275137484995648}
-  - component: {fileID: 8763275137484995649}
+  - component: {fileID: -8491783045027733740}
   - component: {fileID: 8763275137484995650}
+  - component: {fileID: 8763275137484995648}
   - component: {fileID: 5570103383027843838}
   m_Layer: 7
   m_Name: Player
@@ -494,25 +494,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8763275137484995648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763275137484995655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 879feba1ef4c7a24fbe306b1757a1279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraView: 0
-  FirstCameraPlayer: {fileID: 8558847589871125213}
-  SecondCameraPlayer: {fileID: 4353333890094251779}
-  ThirdCameraPlayer: {fileID: 6072294204393002612}
-  weaponMarker: {fileID: 5433761913194377690}
-  Aim: {fileID: 0}
---- !u!54 &8763275137484995649
+--- !u!54 &-8491783045027733740
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -526,7 +508,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!65 &8763275137484995650
 BoxCollider:
@@ -539,8 +521,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0113609, y: 0.99951315, z: 1.89898}
-  m_Center: {x: -0.005680442, y: 0.2498424, z: 0.050224006}
+  m_Size: {x: 1.2, y: 1.2, z: 2}
+  m_Center: {x: 0, y: 0.34, z: 0.05}
+--- !u!114 &8763275137484995648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763275137484995655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879feba1ef4c7a24fbe306b1757a1279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstCameraPlayer: {fileID: 8558847589871125213}
+  SecondCameraPlayer: {fileID: 4353333890094251779}
+  ThirdCameraPlayer: {fileID: 6072294204393002612}
+  weaponMarker: {fileID: 5433761913194377690}
 --- !u!114 &5570103383027843838
 MonoBehaviour:
   m_ObjectHideFlags: 0
