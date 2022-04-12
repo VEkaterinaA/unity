@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         _miniMapCameraController.StartMiniMapCameraPosition(transform);
     }
 
-    private async void FixedUpdate()
+    private void FixedUpdate()
     {
         float xMov = Input.GetAxis("Horizontal");
         float zMov = Input.GetAxis("Vertical");
@@ -55,6 +55,10 @@ public class PlayerController : MonoBehaviour
             _miniMapCameraController.ChangeMiniMapCameraPosition(transform);
             _movePlayer.PlayerMovement(xMov,zMov, transform.forward, rigidmodyPlayer);
         }
+    }
+
+    private async void Update()
+    {
         //change camera view
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -71,8 +75,8 @@ public class PlayerController : MonoBehaviour
             await _createWeapon.Create(weaponMarker);
 
         }
-    }
 
+    }
     public void ChangeCameraView()
     {
       _cameraPosition.ChangeCameraPosition(
