@@ -4,7 +4,7 @@ using Zenject;
 public class MoveWeapon : MonoBehaviour
 {
 
-    private float speed = 5f;
+    private float speed = 0.1f;
     private Rigidbody RigidbodyWeapon;
 
     [HideInInspector]
@@ -22,7 +22,7 @@ public class MoveWeapon : MonoBehaviour
     private void FixedUpdate()
     {
         if (RigidbodyWeapon.position.y > 0)
-            RigidbodyWeapon.AddForce(transform.forward * speed, ForceMode.Impulse);
+            RigidbodyWeapon.AddForce(transform.forward, ForceMode.Impulse);
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,8 +31,9 @@ public class MoveWeapon : MonoBehaviour
         {
             Debug.Log(_damage.DamageBullet);
             HealthPerson.HittingInPerson(_damage.DamageBullet,collision.gameObject,collision.transform.tag);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
+
     }
 }
 

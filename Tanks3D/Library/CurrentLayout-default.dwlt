@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 25
+  controlID: 16
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 26
+  controlID: 17
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 27
+  controlID: 88
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 278
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -2.1178985, y: 0.8046452, z: -46.949474}
     speed: 2
-    m_Value: {x: 0.350299, y: 0.47030443, z: -0.120523944}
+    m_Value: {x: -2.1178985, y: 0.8046452, z: -46.949474}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -393,11 +393,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.11355965, y: 0.34688908, z: -0.0423556, w: 0.93004256}
     speed: 2
-    m_Value: {x: 0.030305818, y: 0.7068808, z: -0.030342586, w: 0.7060315}
+    m_Value: {x: -0.11355965, y: -0.34688908, z: 0.0423556, w: -0.9300425}
   m_Size:
     m_Target: 0.7771984
     speed: 2
-    m_Value: 1.6658695
+    m_Value: 0.7771984
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -450,9 +450,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 120d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 6cfbffff604a0000
+      m_ExpandedIDs: 6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -524,8 +524,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -669.5
     m_HBaseRangeMax: 669.5
-    m_VBaseRangeMin: -289.5
-    m_VBaseRangeMax: 289.5
+    m_VBaseRangeMin: -300
+    m_VBaseRangeMax: 300
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -542,11 +542,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1339
-      height: 579
+      height: 600
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 669.5, y: 289.5}
+    m_Translation: {x: 669.5, y: 300}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -554,9 +554,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -669.5
-      y: -289.5
+      y: -300
       width: 1339
-      height: 579
+      height: 600
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1339, y: 600}
@@ -603,22 +603,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: S:\unity\GitHub\unity\Tanks3D
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 19}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a04b0000
     m_LastClickedID: 19360
-    m_ExpandedIDs: 000000008c4b00008e4b0000904b0000a64b000000ca9a3b
+    m_ExpandedIDs: 000000008a4b00008c4b00008e4b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -646,7 +646,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008c4b00008e4b0000904b0000
+    m_ExpandedIDs: 000000008a4b00008c4b00008e4b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
