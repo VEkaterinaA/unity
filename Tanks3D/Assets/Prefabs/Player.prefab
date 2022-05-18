@@ -465,7 +465,6 @@ GameObject:
   - component: {fileID: -8491783045027733740}
   - component: {fileID: 8763275137484995650}
   - component: {fileID: 8763275137484995648}
-  - component: {fileID: 5570103383027843838}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -540,19 +539,6 @@ MonoBehaviour:
   ThirdCameraPlayer: {fileID: 6072294204393002612}
   weaponMarker: {fileID: 5433761913194377690}
   Aim: {fileID: 0}
---- !u!114 &5570103383027843838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763275137484995655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4172b173dea40a44582c9dd8e1b51bfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthPerson: 100
 --- !u!1 &8763275137519118441
 GameObject:
   m_ObjectHideFlags: 0

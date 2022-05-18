@@ -1,3 +1,4 @@
+using Assets.Scripts.Player;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
@@ -5,12 +6,12 @@ using Zenject;
 
 public class EnemyAI : MonoBehaviour
 {
-    private PlayerController playerController;
-    private CreateWeapon createWeapon;
+    private PlayerController _playerController;
+    private CreateWeapon _createWeapon;
+    [HideInInspector]
+    public Health health;
 
     private NavMeshAgent navMeshAgent;
-   // private float changePosTime = 5f;
-   // private float moveDistance = 40f;
     [SerializeField]
     private WeaponStartPos weaponMarker;
     [SerializeField]
@@ -32,8 +33,8 @@ public class EnemyAI : MonoBehaviour
     [Inject]
     void Construct(PlayerController playerController, CreateWeapon createWeapon)
     {
-        this.playerController = playerController;
-        this.createWeapon = createWeapon;
+        _playerController = playerController;
+        _createWeapon = createWeapon;
     }
       
 
@@ -73,18 +74,18 @@ public class EnemyAI : MonoBehaviour
 
     void ChasePlayer()
     {
-        navMeshAgent.SetDestination(playerController.transform.position);
+        navMeshAgent.SetDestination(_playerController.transform.position);
     }
     async Task AttackPlayer()
     {
         //navMeshAgent.SetDestination(playerController.transform.position);
-        transform.LookAt(playerController.transform);
+        transform.LookAt(_playerController.transform);
         if(!alreadyAttacked)
         {
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
-            await createWeapon.Create(weaponMarker);
+            await _createWeapon.Create(weaponMarker);
         }
     }
 

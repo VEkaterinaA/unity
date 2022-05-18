@@ -1,5 +1,6 @@
 using UnityEngine;
-
+namespace Assets.Scripts.Player
+{
     public class MovePlayer
     {
         private Vector3 velocity = Vector3.zero;
@@ -15,8 +16,9 @@ using UnityEngine;
         }
         private void PerformMove()
         {
-            if (velocity != Vector3.zero) {
-            rigidbodyPlayer.MovePosition(rigidbodyPlayer.position + velocity*Time.fixedDeltaTime);
+            if (velocity != Vector3.zero)
+            {
+                rigidbodyPlayer.MovePosition(rigidbodyPlayer.position + velocity * Time.fixedDeltaTime);
                 velocity = Vector3.zero;
             }
         }
@@ -29,8 +31,8 @@ using UnityEngine;
         private void PerformRotaton()
         {
             {
-            if (rotation != Vector3.zero)
-                rigidbodyPlayer.MoveRotation(rigidbodyPlayer.rotation * Quaternion.Euler(rotation));
+                if (rotation != Vector3.zero)
+                    rigidbodyPlayer.MoveRotation(rigidbodyPlayer.rotation * Quaternion.Euler(rotation));
                 rotation = Vector3.zero;
             }
         }
@@ -46,4 +48,5 @@ using UnityEngine;
             Vector3 rotation = new Vector3(0, xMov, 0) * rotationSpeed;
             Rotation(rotation);
         }
-    } 
+    }
+}

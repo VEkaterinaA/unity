@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using Assets.Scripts.Persons;
+using Assets.Scripts.Player;
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -17,6 +20,12 @@ class MainInstaller : MonoInstaller, IInitializable
     private Image imageHealth, imageAim;
     [SerializeField]
     private Camera MiniMapCamera;
+    [SerializeField]
+    private Text ScoreText;
+
+    private float BestScore;
+    private float HealthPlayer = 100;
+
     public override void InstallBindings()
     {
         BindInstallerBindings();
@@ -29,7 +38,6 @@ class MainInstaller : MonoInstaller, IInitializable
 
         BindPlayer();
 
-
     }
 
     private void BindInstallerBindings()
@@ -41,6 +49,8 @@ class MainInstaller : MonoInstaller, IInitializable
     }
     private void BindPlayer()
     {
+        LoadDataGame();
+
         Container
             .Bind<HealthBar>()
             .AsSingle()
@@ -64,8 +74,32 @@ class MainInstaller : MonoInstaller, IInitializable
             .AsSingle();
 
         playerController.Aim = imageAim;
+        playerController.health = new Health();
+        playerController.health.StartHealthPlayer = HealthPlayer;
+        playerController.health.HealthPerson = playerController.health.StartHealthPlayer;
+
+        BindPerson();
     }
 
+    private void BindPerson()
+    {
+        Container
+    .Bind<HittingInPerson>()
+    .AsSingle();
+
+    }
+
+    private void LoadDataGame()
+    {
+        BestScore = PlayerPrefs.GetFloat("Score");
+
+        Container
+    .Bind<ScoreText>()
+    .AsSingle()
+    .WithArguments(ScoreText,BestScore);
+
+
+    }
     private void BindMinimapCameraController()
     {
         Container

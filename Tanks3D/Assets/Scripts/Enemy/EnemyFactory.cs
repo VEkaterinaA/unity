@@ -19,7 +19,21 @@ public class EnemyFactory : IFactory<EnemyStartPos>
     }
     public async Task Create(EnemyStartPos enemyMarker, Vector3 StartPos)
     {
-                _diContainer.InstantiatePrefab(PrefabObject, StartPos, Quaternion.identity, null);
+              var NewEnemy =  _diContainer.InstantiatePrefab(PrefabObject, StartPos, Quaternion.identity, null);
+       
+        var EnemyAIScript = NewEnemy.GetComponent<EnemyAI>();
+
+        switch (enemyMarker.enemyType)
+        {
+            case EnemyType.Tank:
+                EnemyAIScript.health = new Health();
+                EnemyAIScript.health.StartHealthPlayer = 20;
+                EnemyAIScript.health.HealthPerson = EnemyAIScript.health.StartHealthPlayer;
+
+                break;
+        }
+
+
     }
 }
 

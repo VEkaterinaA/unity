@@ -1,3 +1,5 @@
+using Assets.Scripts.Persons;
+using Assets.Scripts.Player;
 using UnityEngine;
 using Zenject;
 
@@ -6,14 +8,16 @@ public class MoveWeapon : MonoBehaviour
 
     private float speed = 0.1f;
     private Rigidbody RigidbodyWeapon;
-
+     
     [HideInInspector]
     public Damage _damage;
-
+    [HideInInspector]
+    private HittingInPerson _hittingInPerson;
     [Inject]
-    void Construct(Damage damage)
+    void Construct(Damage damage, HittingInPerson hittingInPerson)
     {
         _damage = damage;
+        _hittingInPerson = hittingInPerson;
     }
     private void Start()
     {
@@ -26,11 +30,21 @@ public class MoveWeapon : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Health HealthPerson = collision.transform.GetComponent<Health>();
-        if (HealthPerson != null)
+        if (collision.transform.tag == "Player")
         {
-            Debug.Log(_damage.DamageBullet);
-            HealthPerson.HittingInPerson(_damage.DamageBullet,collision.gameObject,collision.transform.tag);
+            if (_hittingInPerson._HittingInPerson(collision.transform.GetComponent<PlayerController>().health, _damage.DamageBullet, collision.transform.tag))
+            { 
+                Destroy(collision.gameObject); 
+            }
+        }
+        else if (collision.transform.tag == "Enemy")
+        {
+            Debug.Log("-10");
+            if (_hittingInPerson._HittingInPerson(collision.transform.GetComponent<EnemyAI>().health, _damage.DamageBullet, collision.transform.tag))
+            {
+                Destroy(collision.gameObject);
+            }
+
         }
         Destroy(gameObject);
 

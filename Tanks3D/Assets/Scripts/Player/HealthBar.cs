@@ -1,17 +1,21 @@
-using UnityEngine;
 using UnityEngine.UI;
-public class HealthBar
+
+namespace Assets.Scripts.Player
 {
-    private Image Bar;
 
-    public HealthBar(Image bar)
+    public class HealthBar
     {
-        Bar = bar;
-    }
+        private Image Bar;
 
-    public void ChangeFill(float fill)
-    {
-        Bar.fillAmount = fill;
-    }
+        public HealthBar(Image bar)
+        {
+            Bar = bar;
+        }
 
+        public void ChangeFill(float fill)
+        {
+            Bar.fillAmount = fill;
+        }
+
+    }
 }
