@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{BDA2ADA4-42CD-8A25-7416-2E83A8F499A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -58,41 +57,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromGameObjectInstaller\TestFromGameObjectInstaller.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponentInHierarchyGameObjectContext\TestFromComponentInHierarchyGameObjectContext.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Installers\TestInstallers\TestInstallers.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Installers\TestScriptableObjectInstallers\TestScriptableObjectInstallers.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestLazy\TestLazy.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Misc\TestMonoKernelDecoration\TestMonoKernelDecoration.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\TestBindFactoryFive\TestBindFactoryFive.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Util\FixtureUtil.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Misc\TestZenAutoInjecter\TestZenAutoInjecter.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Misc\TestAnimationStateBehaviourInject\TestAnimationStateBehaviourInject.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponent\TestFromComponentOn.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromNewScriptableObjectResource\TestFromNewScriptableObjectResource.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\TestBindFactoryOne\TestBindFactoryOne.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\SceneTests\TestSceneContextEvents.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\IntegrationTestTester\TestIntegrationTest.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromGameObject\TestFromGameObject.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromResource\TestFromResource.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\PrefabFactory\TestPrefabFactory.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestInstantiateCallback\TestInstantiateCallback.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromSubContainerPrefabResource\TestFromSubContainerPrefabResource.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromPrefab\TestFromPrefab.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestDiContainerMethods\TestDiContainerMethods.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponentInSiblings\TestFromComponentInSiblings.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponentInParents\TestFromComponentInParents.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromPrefabInstaller\TestFromPrefabInstaller.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponentInChildren\TestFromComponentInChildren.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromPrefabResource\TestFromPrefabResource.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Installers\TestMonoInstallers\TestMonoInstallers.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromSubContainerPrefab\TestFromSubContainerPrefab.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\TestBindFactory\TestBindFactory.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\TestMemoryPools\TestMemoryPool1.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponentInHierarchy\TestFromComponentInHierarchy.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponent\TestFromNewComponentOn.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Misc\TestMonoKernelDecoration\KernelDecoratorInstaller.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromSiblingComponent\TestFromSiblingComponent.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Misc\TestMonoKernelDecoration\DelayedInitializeKernel.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponentInHierarchyGameObjectContext\TestFromComponentInHierarchyGameObjectContext.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Misc\TestMonoKernelDecoration\TestMonoKernelDecoration.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\TestBindFactoryFive\TestBindFactoryFive.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Util\FixtureUtil.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Misc\TestAnimationStateBehaviourInject\TestAnimationStateBehaviourInject.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponent\TestFromComponentOn.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\TestBindFactoryOne\TestBindFactoryOne.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\SceneTests\TestSceneContextEvents.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromResource\TestFromResource.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestInstantiateCallback\TestInstantiateCallback.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromPrefab\TestFromPrefab.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromPrefabInstaller\TestFromPrefabInstaller.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromComponentInChildren\TestFromComponentInChildren.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromPrefabResource\TestFromPrefabResource.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Bindings\TestFromSubContainerPrefab\TestFromSubContainerPrefab.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Factories\TestMemoryPools\TestMemoryPool1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Tests\Zenject-IntegrationTests-Editor.asmdef" />
@@ -698,6 +697,10 @@
     <ProjectReference Include="Zenject.csproj">
       <Project>{05C3EFD1-B4C1-15F4-5D5A-0C7CAF6DD9BD}</Project>
       <Name>Zenject</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-IntegrationTests.csproj">
+      <Project>{D830ACBF-98D7-31C7-C9AA-CFF4D5CE8EA8}</Project>
+      <Name>Zenject-IntegrationTests</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
