@@ -61,6 +61,7 @@
     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Bullet\Damage.cs" />
     <Compile Include="Assets\Scripts\Player\ScoreText.cs" />
+    <Compile Include="Assets\MainMenu\Scripts\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Bullet\CreateWeapon.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStartPos.cs" />
     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
@@ -89,7 +90,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerCam\CameraPosition.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\ExtensionMethods\Extensions.cs" />
-    <Compile Include="Assets\MainMenu\Scripts\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\GameMenuController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />

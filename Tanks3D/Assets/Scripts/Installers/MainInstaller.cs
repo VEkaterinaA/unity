@@ -1,10 +1,10 @@
-﻿using Assets.Scripts.Persons;
+﻿using Assets.Scripts;
+using Assets.Scripts.Persons;
 using Assets.Scripts.Player;
-using System;
+using Zenject;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 class MainInstaller : MonoInstaller, IInitializable
 {
@@ -38,6 +38,14 @@ class MainInstaller : MonoInstaller, IInitializable
 
         BindPlayer();
 
+        BindGameMenu();
+    }
+
+    private void BindGameMenu()
+    {
+        Container
+            .Bind<GameMenuController>()
+            .AsSingle();
     }
 
     private void BindInstallerBindings()
@@ -96,7 +104,7 @@ class MainInstaller : MonoInstaller, IInitializable
         Container
     .Bind<ScoreText>()
     .AsSingle()
-    .WithArguments(ScoreText,BestScore);
+    .WithArguments(ScoreText, BestScore);
 
 
     }
@@ -137,7 +145,7 @@ class MainInstaller : MonoInstaller, IInitializable
 
     public async void Initialize()
     {
-       await LoadEnemy();
+        await LoadEnemy();
     }
 
     public async Task LoadEnemy()

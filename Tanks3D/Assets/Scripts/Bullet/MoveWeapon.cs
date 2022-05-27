@@ -6,7 +6,6 @@ using Zenject;
 public class MoveWeapon : MonoBehaviour
 {
 
-    private float speed = 0.1f;
     private Rigidbody RigidbodyWeapon;
      
     [HideInInspector]
@@ -39,7 +38,6 @@ public class MoveWeapon : MonoBehaviour
         }
         else if (collision.transform.tag == "Enemy")
         {
-            Debug.Log("-10");
             if (_hittingInPerson._HittingInPerson(collision.transform.GetComponent<EnemyAI>().health, _damage.DamageBullet, collision.transform.tag))
             {
                 Destroy(collision.gameObject);
