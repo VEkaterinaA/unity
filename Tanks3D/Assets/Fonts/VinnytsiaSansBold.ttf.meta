@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ae7511deed105b94ea1c0dd70ba08ea8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Vinnytsia Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a9b4c687bfe060946b1a85a84d6d164a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
