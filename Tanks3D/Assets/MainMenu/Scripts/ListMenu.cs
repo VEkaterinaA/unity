@@ -32,7 +32,7 @@ public class ListMenu : MonoBehaviour
 
     void StartGame_Click()
     {
-        SceneManager.LoadScene(1);
+        SceneTransition.SwitchToScene(1);
     }
     void ExitGame_Click()
     {
