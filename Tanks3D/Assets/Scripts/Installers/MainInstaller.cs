@@ -26,6 +26,7 @@ class MainInstaller : MonoInstaller, IInitializable
     private float BestScore;
     private float HealthPlayer = 100;
 
+    public static int AmountEnemy=0;
     public override void InstallBindings()
     {
         BindInstallerBindings();
@@ -156,6 +157,7 @@ class MainInstaller : MonoInstaller, IInitializable
         foreach (var marker in EnemyMarkers)
         {
             await enemyFactory.Create(marker, marker.transform.position);
+            AmountEnemy++;
         }
 
     }

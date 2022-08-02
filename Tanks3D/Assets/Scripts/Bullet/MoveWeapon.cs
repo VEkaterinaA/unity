@@ -34,6 +34,7 @@ public class MoveWeapon : MonoBehaviour
             if (_hittingInPerson._HittingInPerson(collision.transform.GetComponent<PlayerController>().health, _damage.DamageBullet, collision.transform.tag))
             { 
                 Destroy(collision.gameObject); 
+                
             }
         }
         else if (collision.transform.tag == "Enemy")
@@ -41,6 +42,12 @@ public class MoveWeapon : MonoBehaviour
             if (_hittingInPerson._HittingInPerson(collision.transform.GetComponent<EnemyAI>().health, _damage.DamageBullet, collision.transform.tag))
             {
                 Destroy(collision.gameObject);
+                MainInstaller.AmountEnemy--;
+                if(MainInstaller.AmountEnemy<1)
+                 {
+                  GameObject CanvasWin =  GameObject.Find("/Scene/Win");
+                  CanvasWin.transform.GetChild(0).gameObject.SetActive(true);
+              }
             }
 
         }

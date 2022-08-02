@@ -24,7 +24,7 @@ namespace Assets.Scripts.Persons
                     HealthBarPlayer(health.HealthPerson, health.StartHealthPlayer);
                 return false;
             }
-            if (health.HealthPerson < 0 || health.HealthPerson == 0)
+            if (health.HealthPerson <= 0)
             {
                 _scoreText.ChangeScorePlayer(health.StartHealthPlayer);
                 return true;
