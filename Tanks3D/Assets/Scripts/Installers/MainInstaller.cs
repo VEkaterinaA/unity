@@ -5,6 +5,7 @@ using Zenject;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 class MainInstaller : MonoInstaller, IInitializable
 {
@@ -29,6 +30,7 @@ class MainInstaller : MonoInstaller, IInitializable
     public static int AmountEnemy=0;
     public override void InstallBindings()
     {
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
         BindInstallerBindings();
 
         BindEnemyFactory();

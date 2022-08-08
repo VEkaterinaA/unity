@@ -41,7 +41,7 @@ public class MoveWeapon : MonoBehaviour
         {
             if (_hittingInPerson._HittingInPerson(collision.transform.GetComponent<EnemyAI>().health, _damage.DamageBullet, collision.transform.tag))
             {
-                Destroy(collision.gameObject);
+                 Destroy(collision.gameObject);
                 MainInstaller.AmountEnemy--;
                 if(MainInstaller.AmountEnemy<1)
                  {

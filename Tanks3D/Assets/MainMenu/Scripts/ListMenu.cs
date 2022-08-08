@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class ListMenu : MonoBehaviour
 {
     private Button Button_Template;
-
-
     private void Start()
     {
         Button_Template = transform.GetChild(0).GetComponent<Button>();

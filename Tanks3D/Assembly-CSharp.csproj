@@ -58,8 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet\MoveWeapon.cs" />
     <Compile Include="Assets\Scripts\Bullet\Damage.cs" />
+    <Compile Include="Assets\Resources\ProjectContextScript.cs" />
     <Compile Include="Assets\Scripts\Player\ScoreText.cs" />
     <Compile Include="Assets\Scripts\GameMenuController.cs" />
+    <Compile Include="Assets\GlobalData.cs" />
     <Compile Include="Assets\Scripts\Bullet\CreateWeapon.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStartPos.cs" />
     <Compile Include="Assets\Scripts\MinimapCameraController.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Assets\LoadLevel\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\Player\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\NextLevel.cs" />
     <Compile Include="Assets\MainMenu\Scripts\ListMenu.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Persons\Health.cs" />
