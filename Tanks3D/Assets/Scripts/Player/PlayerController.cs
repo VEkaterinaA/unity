@@ -1,7 +1,7 @@
-using UnityEngine;
 using Script.ExtensionMethods;
-using Zenject;
+using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Assets.Scripts.Player
 {
@@ -11,11 +11,12 @@ namespace Assets.Scripts.Player
         //Classes
         private MovePlayer _movePlayer;
         private CameraPosition _cameraPosition;
-        private CreateWeapon _createWeapon;
         private MinimapCameraController _miniMapCameraController;
-
+        private Weapon _weapon;
         [HideInInspector]
         public Health health;
+        [HideInInspector]
+        public Damage damage = new Damage();
         //**********
         private ClassCameraViewEnum.CameraViewTypes cameraView;//enum
         //CameraView
@@ -35,13 +36,14 @@ namespace Assets.Scripts.Player
         //
         private Rigidbody rigidmodyPlayer;
 
+        private Camera CurrentCameraPlayer;
         [Inject]
-        public void Construct(MovePlayer movePlayer, CameraPosition cameraPosition, CreateWeapon createWeapon, MinimapCameraController miniMapCameraController)
+        public void Construct(MovePlayer movePlayer, CameraPosition cameraPosition, MinimapCameraController miniMapCameraController, Weapon weapon)
         {
             _movePlayer = movePlayer;
             _cameraPosition = cameraPosition;
-            _createWeapon = createWeapon;
             _miniMapCameraController = miniMapCameraController;
+            _weapon = weapon;
         }
 
         private void Awake()
@@ -49,6 +51,8 @@ namespace Assets.Scripts.Player
             rigidmodyPlayer = GetComponent<Rigidbody>();
             cameraView = ClassCameraViewEnum.CameraViewTypes.Third;
             _miniMapCameraController.StartMiniMapCameraPosition(transform);
+            CurrentCameraPlayer = ThirdCameraPlayer;
+            damage.DamageBullet = 10f;
         }
 
         private void FixedUpdate()
@@ -63,7 +67,7 @@ namespace Assets.Scripts.Player
             }
         }
 
-        private async void Update()
+        private void Update()
         {
             //change camera view
             if (Input.GetKeyDown(KeyCode.C))
@@ -76,10 +80,9 @@ namespace Assets.Scripts.Player
                 else Aim.enabled = false;
             }
             //shoot
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetMouseButtonUp(0))
             {
-                await _createWeapon.Create(weaponMarker);
-
+                _weapon.Shoot(CurrentCameraPlayer,damage.DamageBullet);
             }
 
         }
@@ -89,7 +92,9 @@ namespace Assets.Scripts.Player
                 cameraView = cameraView.Next(),
                 FirstCameraPlayer,
                 SecondCameraPlayer,
-                ThirdCameraPlayer);
+                ThirdCameraPlayer,
+                ref CurrentCameraPlayer
+                );
 
         }
 

@@ -7,7 +7,6 @@ using Zenject;
 public class EnemyAI : MonoBehaviour
 {
     private PlayerController _playerController;
-    private CreateWeapon _createWeapon;
     [HideInInspector]
     public Health health;
 
@@ -31,10 +30,9 @@ public class EnemyAI : MonoBehaviour
     bool playerInSightRange, playerInAttackRange;
     
     [Inject]
-    void Construct(PlayerController playerController, CreateWeapon createWeapon)
+    void Construct(PlayerController playerController)
     {
         _playerController = playerController;
-        _createWeapon = createWeapon;
     }
       
 
@@ -44,14 +42,14 @@ public class EnemyAI : MonoBehaviour
         walkPoint = transform.position;
     }
 
-    private async void Update()
+    private void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position,sightRange,whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange,whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         else if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        else if (playerInAttackRange && playerInSightRange) await AttackPlayer();
+        else if (playerInAttackRange && playerInSightRange) AttackPlayer();
 
     }
 
@@ -76,7 +74,7 @@ public class EnemyAI : MonoBehaviour
     {
         navMeshAgent.SetDestination(_playerController.transform.position);
     }
-    async Task AttackPlayer()
+    void AttackPlayer()
     {
         //navMeshAgent.SetDestination(playerController.transform.position);
         transform.LookAt(_playerController.transform);
@@ -85,7 +83,6 @@ public class EnemyAI : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
-            await _createWeapon.Create(weaponMarker);
         }
     }
 

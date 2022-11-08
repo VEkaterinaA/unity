@@ -15,7 +15,7 @@ D:/GitHub_Projects/unity/Tanks3D
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56524
+56007
 Successfully changed project path to: D:/GitHub_Projects/unity/Tanks3D
 D:/GitHub_Projects/unity/Tanks3D
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/GitHub_Projects/unity/Tanks3D
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 430.85 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 99.00 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.5f1 (40eb3a945986)
 [Subsystems] Discovering subsystems at path D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/Resources/UnitySubsystems
@@ -63,7 +63,7 @@ Initialize mono
 Mono path[0] = 'D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56972
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
@@ -72,46 +72,146 @@ Register platform support module: D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/
 Register platform support module: D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
 Register platform support module: D:/Unity/UnityInstalls/2021.3.5f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.015381 seconds.
+Registered in 0.012249 seconds.
 Native extension for UWP target not found
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
-[usbmuxd] Listen thread started
 Native extension for iOS target not found
+[usbmuxd] Listen thread started
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 497.29 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 105.14 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  8.217 seconds
+- Completed reload, in  1.633 seconds
 Domain Reload Profiling:
-	ReloadAssembly (8219ms)
-		BeginReloadAssembly (292ms)
+	ReloadAssembly (1634ms)
+		BeginReloadAssembly (275ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (7577ms)
-			LoadAssemblies (296ms)
+			CreateAndSetChildDomain (4ms)
+		EndReloadAssembly (1121ms)
+			LoadAssemblies (273ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (647ms)
+			SetupTypeCache (265ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (588ms)
-			SetupLoadedEditorAssemblies (4916ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (654ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (2460ms)
+				InitializePlatformSupportModulesInManaged (186ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (497ms)
+				RefreshPlugins (105ms)
 				BeforeProcessingInitializeOnLoad (4ms)
-				ProcessInitializeOnLoadAttributes (1280ms)
-				ProcessInitializeOnLoadMethodAttributes (674ms)
+				ProcessInitializeOnLoadAttributes (249ms)
+				ProcessInitializeOnLoadMethodAttributes (108ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.030781 seconds.
+Registered in 0.008992 seconds.
 Begin MonoManager ReloadAssembly
+Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.728 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2730ms)
+		BeginReloadAssembly (347ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (14ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (149ms)
+		EndReloadAssembly (2149ms)
+			LoadAssemblies (175ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (541ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (126ms)
+			SetupLoadedEditorAssemblies (1212ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (65ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (126ms)
+				ProcessInitializeOnLoadAttributes (941ms)
+				ProcessInitializeOnLoadMethodAttributes (70ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 1.01 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2690 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 87 unused Assets / (96.7 KB). Loaded Objects now: 3147.
+Memory consumption went from 105.7 MB to 105.6 MB.
+Total: 6.773900 ms (FindLiveObjects: 0.394600 ms CreateObjectMapping: 0.197000 ms MarkObjects: 5.837400 ms  DeleteObjects: 0.342100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 660982.389975 seconds.
+  path: Assets/MainMenu/MainMenuUI
+  artifactKey: Guid(f6aee7c907a9d3c41b15c1391dfac3c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuUI using Guid(f6aee7c907a9d3c41b15c1391dfac3c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c7ae94f7b1adfaea0d37f2fdd23da54') in 0.020007 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/MainMenu/MainMenuUI/MainWindowUIToolkit.uxml
+  artifactKey: Guid(aeb85097cbf8c2e47b10f1e5729381eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuUI/MainWindowUIToolkit.uxml using Guid(aeb85097cbf8c2e47b10f1e5729381eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64907ebc704f39aabd64914ffb13ffd3') in 0.089388 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 686.212582 seconds.
+  path: Assets/MainMenu/MainMenuUI/ListMenuButtonTemplate
+  artifactKey: Guid(7740173e3a0f8544f980beca3d4077d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuUI/ListMenuButtonTemplate using Guid(7740173e3a0f8544f980beca3d4077d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4d364bb00820eece96ea1a489941c5') in 0.037726 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.528527 seconds.
+  path: Assets/MainMenu/MainMenuUI/ListMenuButtonTemplate/ButtonTemplate.uxml
+  artifactKey: Guid(edfc927e0ebae3848aca30b43dd4c4e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuUI/ListMenuButtonTemplate/ButtonTemplate.uxml using Guid(edfc927e0ebae3848aca30b43dd4c4e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65fb3998c10a5c230858ba239e91ac00') in 0.017052 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.135397 seconds.
+  path: Assets/MainMenu/MainMenuUI/MainWindowUIToolkit.uxml
+  artifactKey: Guid(aeb85097cbf8c2e47b10f1e5729381eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuUI/MainWindowUIToolkit.uxml using Guid(aeb85097cbf8c2e47b10f1e5729381eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f069c03265e12d38bae5ab206ca138') in 0.007246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.554620 seconds.
+  path: Assets/MainMenu/MainMenuUI/ListMenuTemplates
+  artifactKey: Guid(7740173e3a0f8544f980beca3d4077d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuUI/ListMenuTemplates using Guid(7740173e3a0f8544f980beca3d4077d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfb7f2eb884c43072b9171cffa4cf47f') in 0.031711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 802.533652 seconds.
+  path: Assets/MainMenu/MainMenuUI/ListMenuTemplates/ButtonTemplate.uxml
+  artifactKey: Guid(edfc927e0ebae3848aca30b43dd4c4e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MainMenu/MainMenuUI/ListMenuTemplates/ButtonTemplate.uxml using Guid(edfc927e0ebae3848aca30b43dd4c4e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69cc7be1d6c6d02a8ea5030acc9b3815') in 0.028490 seconds 

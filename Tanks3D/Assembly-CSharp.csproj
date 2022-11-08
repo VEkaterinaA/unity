@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Installers\MainInstaller.cs" />
     <Compile Include="Assets\Scripts\Bullet\WeaponType.cs" />
     <Compile Include="Assets\Scripts\Bullet\WeaponStartPos.cs" />
+    <Compile Include="Assets\Scripts\Bullet\Weapon.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyType.cs" />
     <Compile Include="Assets\LoadLevel\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFactory.cs" />
@@ -85,6 +86,9 @@
     <Compile Include="Assets\Scripts\Player\PlayerCam\CameraPosition.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\ExtensionMethods\Extensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\MainMenu\MainMenuUI\MainWindowUIToolkit.uxml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

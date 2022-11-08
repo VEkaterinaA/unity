@@ -35,9 +35,9 @@ class MainInstaller : MonoInstaller, IInitializable
 
         BindEnemyFactory();
 
-        BindWeaponFactory();
-
         BindMinimapCameraController();
+
+        BindWeaponFactory();
 
         BindPlayer();
 
@@ -89,7 +89,6 @@ class MainInstaller : MonoInstaller, IInitializable
         playerController.health.StartHealthPlayer = HealthPlayer;
         playerController.health.HealthPerson = playerController.health.StartHealthPlayer;
 
-        BindPerson();
     }
 
     private void BindPerson()
@@ -128,16 +127,23 @@ class MainInstaller : MonoInstaller, IInitializable
     }
     private void BindWeaponFactory()
     {
+        BindPerson();
+
+
         BindCharacterWeapon();
+
+        Container
+            .Bind<Weapon>()
+            .AsTransient();
 
         Container
             .Bind<IFactory<WeaponStartPos>>()
             .To<WeaponFactory>()
             .AsSingle();
 
-        Container
-            .Bind<CreateWeapon>()
-            .AsSingle();
+        //Container
+        //    .Bind<CreateWeapon>()
+        //    .AsSingle();
     }
     private void BindCharacterWeapon()
     {

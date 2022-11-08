@@ -6,7 +6,8 @@ public class CameraPosition
        ClassCameraViewEnum.CameraViewTypes cameraView,
         Camera FirstCameraPlayer,
         Camera SecondCameraPlayer,
-        Camera ThirdCameraPlayer
+        Camera ThirdCameraPlayer,
+        ref Camera CurrentCameraPlayer
 )
     {
         switch (cameraView)
@@ -15,16 +16,19 @@ public class CameraPosition
                 FirstCameraPlayer.enabled = true;
                 SecondCameraPlayer.enabled = false;
                 ThirdCameraPlayer.enabled = false;
+                CurrentCameraPlayer = FirstCameraPlayer;
                 break;
             case ClassCameraViewEnum.CameraViewTypes.Second:
                 FirstCameraPlayer.enabled = false;
                 SecondCameraPlayer.enabled = true;
                 ThirdCameraPlayer.enabled = false;
+                CurrentCameraPlayer = SecondCameraPlayer;
                 break;
             default:
                 FirstCameraPlayer.enabled = false;
                 SecondCameraPlayer.enabled = false;
                 ThirdCameraPlayer.enabled = true;
+                CurrentCameraPlayer = ThirdCameraPlayer;
                 break;
         }
     }
