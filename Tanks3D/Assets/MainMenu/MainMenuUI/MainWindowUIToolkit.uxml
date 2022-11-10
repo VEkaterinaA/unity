@@ -1,7 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="MainContainer" style="position: relative; left: auto; top: auto;">
-        <ui:VisualElement>
-            <ui:ListView focusable="true" name="ListMenu" />
+    <Style src="project://database/Assets/MainMenu/MainMenuUI/ButtonStyle.uss?fileID=7433441132597879392&amp;guid=b2e99102e9d5c514e9bfecf09c4483f9&amp;type=3#ButtonStyle" />
+    <ui:VisualElement name="MainContainer" style="position: relative; left: auto; top: auto; justify-content: space-around; height: auto; flex-shrink: 0; flex-grow: 1;">
+        <ui:VisualElement name="ButtonsList" style="justify-content: center; align-items: center; top: -20px;">
+            <ui:Button text="Start Game" display-tooltip-when-elided="true" name="Start" class="ButtonStyle" />
+            <ui:Button text="Settings" display-tooltip-when-elided="true" name="Settings" class="ButtonStyle" />
+            <ui:Button text="Exit" display-tooltip-when-elided="true" name="Exit" class="ButtonStyle" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

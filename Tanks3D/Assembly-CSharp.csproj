@@ -56,38 +56,42 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bullet\MoveWeapon.cs" />
-    <Compile Include="Assets\Scripts\Bullet\Damage.cs" />
+    <Compile Include="Assets\Levels\Scripts\Bullet\MoveWeapon.cs" />
+    <Compile Include="Assets\Levels\Scripts\Bullet\Damage.cs" />
     <Compile Include="Assets\Resources\ProjectContextScript.cs" />
-    <Compile Include="Assets\Scripts\Player\ScoreText.cs" />
-    <Compile Include="Assets\Scripts\GameMenuController.cs" />
+    <Compile Include="Assets\Levels\Scripts\Player\ScoreText.cs" />
+    <Compile Include="Assets\Levels\Scripts\GameMenuController.cs" />
     <Compile Include="Assets\GlobalData.cs" />
-    <Compile Include="Assets\Scripts\Bullet\CreateWeapon.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyStartPos.cs" />
-    <Compile Include="Assets\Scripts\MinimapCameraController.cs" />
-    <Compile Include="Assets\Scripts\Installers\MainInstaller.cs" />
-    <Compile Include="Assets\Scripts\Bullet\WeaponType.cs" />
-    <Compile Include="Assets\Scripts\Bullet\WeaponStartPos.cs" />
-    <Compile Include="Assets\Scripts\Bullet\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyType.cs" />
-    <Compile Include="Assets\LoadLevel\SceneTransition.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyFactory.cs" />
-    <Compile Include="Assets\Scripts\Player\HealthBar.cs" />
-    <Compile Include="Assets\Scripts\NextLevel.cs" />
+    <Compile Include="Assets\Levels\Scripts\Bullet\CreateWeapon.cs" />
+    <Compile Include="Assets\Levels\Scripts\Enemy\EnemyStartPos.cs" />
+    <Compile Include="Assets\MainMenu\Scripts\ViewModel.cs" />
+    <Compile Include="Assets\Levels\Scripts\MinimapCameraController.cs" />
+    <Compile Include="Assets\Levels\Scripts\Installers\MainInstaller.cs" />
+    <Compile Include="Assets\Levels\Scripts\Bullet\WeaponType.cs" />
+    <Compile Include="Assets\Levels\Scripts\Bullet\WeaponStartPos.cs" />
+    <Compile Include="Assets\Levels\Scripts\Bullet\Weapon.cs" />
+    <Compile Include="Assets\MainMenu\Scripts\PropertyChangedClass.cs" />
+    <Compile Include="Assets\MainMenu\Scripts\Model.cs" />
+    <Compile Include="Assets\Levels\Scripts\Enemy\EnemyType.cs" />
+    <Compile Include="Assets\LoadLevelWindow\SceneTransition.cs" />
+    <Compile Include="Assets\Levels\Scripts\Enemy\EnemyFactory.cs" />
+    <Compile Include="Assets\Levels\Scripts\Player\HealthBar.cs" />
+    <Compile Include="Assets\Levels\Scripts\NextLevel.cs" />
     <Compile Include="Assets\MainMenu\Scripts\ListMenu.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyAI.cs" />
-    <Compile Include="Assets\Scripts\Persons\Health.cs" />
-    <Compile Include="Assets\Scripts\Player\MovePlayer.cs" />
-    <Compile Include="Assets\Scripts\IFactory.cs" />
-    <Compile Include="Assets\Scripts\Bullet\WeaponFactory.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Persons\HittingInPerson.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCam\ClassCameraViewEnum.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCam\CameraPosition.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\ExtensionMethods\Extensions.cs" />
+    <Compile Include="Assets\Levels\Scripts\Enemy\EnemyAI.cs" />
+    <Compile Include="Assets\Levels\Scripts\Persons\Health.cs" />
+    <Compile Include="Assets\Levels\Scripts\Player\MovePlayer.cs" />
+    <Compile Include="Assets\Levels\Scripts\IFactory.cs" />
+    <Compile Include="Assets\Levels\Scripts\Bullet\WeaponFactory.cs" />
+    <Compile Include="Assets\Levels\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Levels\Scripts\Persons\HittingInPerson.cs" />
+    <Compile Include="Assets\Levels\Scripts\Player\PlayerCam\ClassCameraViewEnum.cs" />
+    <Compile Include="Assets\Levels\Scripts\Player\PlayerCam\CameraPosition.cs" />
+    <Compile Include="Assets\Levels\Scripts\GameController.cs" />
+    <Compile Include="Assets\Levels\Scripts\ExtensionMethods\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\MainMenu\MainMenuUI\ButtonStyle.uss" />
     <None Include="Assets\MainMenu\MainMenuUI\MainWindowUIToolkit.uxml" />
   </ItemGroup>
   <ItemGroup>

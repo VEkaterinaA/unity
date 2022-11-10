@@ -1,0 +1,29 @@
+.ButtonStyle {
+    font-size: 16px;
+    -unity-text-align: middle-center;
+    -unity-font: url('project://database/Assets/Fonts/VinnytsiaSansBold.ttf?fileID=12800000&guid=ae7511deed105b94ea1c0dd70ba08ea8&type=3#VinnytsiaSansBold');
+    color: rgb(0, 0, 0);
+    -unity-text-outline-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 200px;
+}
+
+.ButtonStyle:hover {
+    background-color: rgb(229, 238, 208);
+}
+
+.ButtonStyle:active {
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    background-color: rgba(255, 255, 255, 255);
+}
