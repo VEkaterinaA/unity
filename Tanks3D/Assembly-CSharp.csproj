@@ -77,7 +77,6 @@
     <Compile Include="Assets\Levels\Scripts\Enemy\EnemyFactory.cs" />
     <Compile Include="Assets\Levels\Scripts\Player\HealthBar.cs" />
     <Compile Include="Assets\Levels\Scripts\NextLevel.cs" />
-    <Compile Include="Assets\MainMenu\Scripts\ListMenu.cs" />
     <Compile Include="Assets\Levels\Scripts\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\Levels\Scripts\Persons\Health.cs" />
     <Compile Include="Assets\Levels\Scripts\Player\MovePlayer.cs" />
@@ -92,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MainMenu\MainMenuUI\ButtonStyle.uss" />
+    <None Include="Assets\MainMenu\MainMenuUI\ButtonTemplate.uxml" />
     <None Include="Assets\MainMenu\MainMenuUI\MainWindowUIToolkit.uxml" />
   </ItemGroup>
   <ItemGroup>

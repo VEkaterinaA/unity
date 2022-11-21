@@ -1,5 +1,6 @@
 
 Tanks3D/Temp/UnityLockfile
+Tanks3D/Logs/
 Tanks3D/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache
 Tanks3D/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
 Tanks3D/obj/Debug/Zenject-Editor.csprojAssemblyReference.cache
@@ -23,6 +24,7 @@ obj/
 *.pidb
 *.suo
 /*.sln
+*.vsidx
 *.user
 *.unityproj
 *.booproj

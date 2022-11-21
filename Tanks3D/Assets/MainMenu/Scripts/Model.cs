@@ -1,6 +1,6 @@
 ﻿namespace Assets.MainMenu.Scripts
 {
-    internal class Model : PropertyChangedClass
+    public class Model : PropertyChangedClass
     {
         private string name;
         private string nameWindowOpen;
