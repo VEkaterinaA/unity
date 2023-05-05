@@ -22,5 +22,6 @@
                 OnPropertyChanged("NameWindowOpen");
             }
         }
+
     }
 }
