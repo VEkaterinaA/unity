@@ -1,11 +1,11 @@
 ﻿using Assets.Levels.Scripts;
 using Assets.Levels.Scripts.Persons;
 using Assets.Levels.Scripts.Player;
-using Zenject;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Zenject;
 
 class MainInstaller : MonoInstaller, IInitializable
 {
@@ -25,9 +25,8 @@ class MainInstaller : MonoInstaller, IInitializable
     private Text ScoreText;
 
     private float BestScore;
-    private float HealthPlayer = 100;
 
-    public static int AmountEnemy=0;
+    public static int AmountEnemy = 0;
     public override void InstallBindings()
     {
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
@@ -37,7 +36,9 @@ class MainInstaller : MonoInstaller, IInitializable
 
         BindMinimapCameraController();
 
-        BindWeaponFactory();
+        BindPerson();
+
+        BindWeapon();
 
         BindPlayer();
 
@@ -85,20 +86,16 @@ class MainInstaller : MonoInstaller, IInitializable
             .AsSingle();
 
         playerController.Aim = imageAim;
-        playerController.health = new Health();
-        playerController.health.StartHealthPlayer = HealthPlayer;
-        playerController.health.HealthPerson = playerController.health.StartHealthPlayer;
 
     }
 
     private void BindPerson()
     {
         Container
-    .Bind<HittingInPerson>()
+    .Bind<HealthPerson>()
     .AsSingle();
 
     }
-
     private void LoadDataGame()
     {
         BestScore = PlayerPrefs.GetFloat("Score");
@@ -125,31 +122,11 @@ class MainInstaller : MonoInstaller, IInitializable
             .To<EnemyFactory>()
             .AsSingle();
     }
-    private void BindWeaponFactory()
-    {
-        BindPerson();
-
-
-        BindCharacterWeapon();
-
-        Container
-            .Bind<Weapon>()
-            .AsTransient();
-
-        Container
-            .Bind<IFactory<WeaponStartPos>>()
-            .To<WeaponFactory>()
-            .AsSingle();
-
-        //Container
-        //    .Bind<CreateWeapon>()
-        //    .AsSingle();
-    }
-    private void BindCharacterWeapon()
+    private void BindWeapon()
     {
         Container
-            .Bind<Damage>()
-            .AsTransient();
+    .Bind<Weapon>()
+    .AsSingle();
     }
 
     public async void Initialize()

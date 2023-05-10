@@ -16,10 +16,11 @@ namespace Assets.Levels.Scripts.Player
         [HideInInspector]
         public Health health;
         [HideInInspector]
-        public Damage damage = new Damage();
+        public Damage damage;
         //**********
         private ClassCameraViewEnum.CameraViewTypes cameraView;//enum
-        //CameraView
+                                                               
+        #region Camera View
         [Header("Camera View")]
         [SerializeField]
         private Camera FirstCameraPlayer;
@@ -27,7 +28,8 @@ namespace Assets.Levels.Scripts.Player
         private Camera SecondCameraPlayer;
         [SerializeField]
         private Camera ThirdCameraPlayer;
-        //
+        #endregion
+
         [Header("Start Position Bullet")]
         public WeaponStartPos weaponMarker;
         //
@@ -43,7 +45,11 @@ namespace Assets.Levels.Scripts.Player
             _movePlayer = movePlayer;
             _cameraPosition = cameraPosition;
             _miniMapCameraController = miniMapCameraController;
+
+            health = new Health(100f);
+            damage = new Damage(10f);
             _weapon = weapon;
+
         }
 
         private void Awake()
@@ -52,7 +58,6 @@ namespace Assets.Levels.Scripts.Player
             cameraView = ClassCameraViewEnum.CameraViewTypes.Third;
             _miniMapCameraController.StartMiniMapCameraPosition(transform);
             CurrentCameraPlayer = ThirdCameraPlayer;
-            damage.DamageBullet = 10f;
         }
 
         private void FixedUpdate()
@@ -82,7 +87,7 @@ namespace Assets.Levels.Scripts.Player
             //shoot
             if (Input.GetMouseButtonUp(0))
             {
-                _weapon.Shoot(CurrentCameraPlayer,damage.DamageBullet);
+                _weapon.Shoot(this);
             }
 
         }

@@ -5,6 +5,13 @@ using Zenject;
 
 public class Health
 {
-    public float StartHealthPlayer;
-    public float HealthPerson;
+
+    public float startHealthPerson;
+    public float healthPerson;
+
+    public Health(float startHealthPerson)
+    {
+        this.startHealthPerson = startHealthPerson;
+        this.healthPerson = startHealthPerson;
+    }
 }

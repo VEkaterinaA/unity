@@ -26,10 +26,8 @@ public class EnemyFactory : IFactory<EnemyStartPos>
         switch (enemyMarker.enemyType)
         {
             case EnemyType.Tank:
-                EnemyAIScript.health = new Health();
-                EnemyAIScript.health.StartHealthPlayer = 20;
-                EnemyAIScript.health.HealthPerson = EnemyAIScript.health.StartHealthPlayer;
-
+                EnemyAIScript.health = new Health(30f);
+                EnemyAIScript.damage = new Damage(10f);
                 break;
         }
 

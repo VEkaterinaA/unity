@@ -56,13 +56,11 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Levels\Scripts\Bullet\MoveWeapon.cs" />
     <Compile Include="Assets\Levels\Scripts\Bullet\Damage.cs" />
     <Compile Include="Assets\Resources\ProjectContextScript.cs" />
     <Compile Include="Assets\Levels\Scripts\Player\ScoreText.cs" />
     <Compile Include="Assets\Levels\Scripts\GameMenuController.cs" />
     <Compile Include="Assets\GlobalData.cs" />
-    <Compile Include="Assets\Levels\Scripts\Bullet\CreateWeapon.cs" />
     <Compile Include="Assets\Levels\Scripts\Enemy\EnemyStartPos.cs" />
     <Compile Include="Assets\MainMenu\Scripts\ViewModel.cs" />
     <Compile Include="Assets\Levels\Scripts\MinimapCameraController.cs" />
@@ -81,9 +79,8 @@
     <Compile Include="Assets\Levels\Scripts\Persons\Health.cs" />
     <Compile Include="Assets\Levels\Scripts\Player\MovePlayer.cs" />
     <Compile Include="Assets\Levels\Scripts\IFactory.cs" />
-    <Compile Include="Assets\Levels\Scripts\Bullet\WeaponFactory.cs" />
     <Compile Include="Assets\Levels\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Levels\Scripts\Persons\HittingInPerson.cs" />
+    <Compile Include="Assets\Levels\Scripts\Persons\HealthPerson.cs" />
     <Compile Include="Assets\Levels\Scripts\Player\PlayerCam\ClassCameraViewEnum.cs" />
     <Compile Include="Assets\Levels\Scripts\Player\PlayerCam\CameraPosition.cs" />
     <Compile Include="Assets\Levels\Scripts\GameController.cs" />

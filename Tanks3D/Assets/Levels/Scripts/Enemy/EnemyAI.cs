@@ -7,12 +7,15 @@ using Zenject;
 public class EnemyAI : MonoBehaviour
 {
     private PlayerController _playerController;
-    [HideInInspector]
+
+
     public Health health;
+    public Damage damage;
+    public Weapon _weapon;
 
     private NavMeshAgent navMeshAgent;
-    [SerializeField]
-    private WeaponStartPos weaponMarker;
+
+    public WeaponStartPos weaponMarker;
     [SerializeField]
     private LayerMask whatIsGround, whatIsPlayer;
 
@@ -30,14 +33,16 @@ public class EnemyAI : MonoBehaviour
     bool playerInSightRange, playerInAttackRange;
     
     [Inject]
-    void Construct(PlayerController playerController)
+    void Construct(PlayerController playerController, Weapon weapon)
     {
         _playerController = playerController;
+        _weapon = weapon;
     }
       
 
     private void Start()
     {
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         walkPoint = transform.position;
     }
@@ -80,6 +85,8 @@ public class EnemyAI : MonoBehaviour
         transform.LookAt(_playerController.transform);
         if(!alreadyAttacked)
         {
+            _weapon.Shoot(this);
+
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
